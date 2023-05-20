@@ -65,32 +65,33 @@ class _HomeViewState extends State<HomeView> {
                     width: 30,
                   ),
                   Expanded(
-                      child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        'TV Shows',
-                        style: textStyle,
-                      ),
-                      Text(
-                        'Movies',
-                        style: textStyle,
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            'Categories',
-                            style: textStyle,
-                          ),
-                          const SizedBox(width: 2),
-                          const Icon(
-                            Icons.arrow_drop_down,
-                            color: Colors.white,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ))
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'TV Shows',
+                          style: textStyle,
+                        ),
+                        Text(
+                          'Movies',
+                          style: textStyle,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              'Categories',
+                              style: textStyle,
+                            ),
+                            const SizedBox(width: 2),
+                            const Icon(
+                              Icons.arrow_drop_down,
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
         actions: [
@@ -130,33 +131,34 @@ class _HomeViewState extends State<HomeView> {
 
   SliverToBoxAdapter _contentHeader(Size screenSize) {
     return SliverToBoxAdapter(
-      child: Stack(children: [
-        Container(
-          height: screenSize.height / 1.3,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('${_imageAsset}image1.jpg'),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-        Positioned(
-          left: 0,
-          right: 0,
-          bottom: 0,
-          child: Container(
-            height: screenSize.height / 3.0,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.black, Colors.transparent],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
+      child: Stack(
+        children: [
+          Container(
+            height: screenSize.height / 1.3,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('${_imageAsset}image1.jpg'),
+                fit: BoxFit.cover,
               ),
             ),
           ),
-        ),
-        _buildTopMenu(),
-        Positioned(
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Container(
+              height: screenSize.height / 3.0,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.black, Colors.transparent],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                ),
+              ),
+            ),
+          ),
+          _buildTopMenu(),
+          Positioned(
             left: 0,
             right: 0,
             bottom: 0,
@@ -220,42 +222,45 @@ class _HomeViewState extends State<HomeView> {
                   ],
                 )
               ],
-            ))
-      ]),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
   Positioned _buildTopMenu() {
     return const Positioned(
-        left: 0,
-        right: 0,
-        top: 100,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              'TV Shows',
-              style: TextStyle(color: Colors.white),
-            ),
-            Text(
-              'Movies',
-              style: TextStyle(color: Colors.white),
-            ),
-            Row(
-              children: [
-                Text(
-                  'Categories',
-                  style: TextStyle(color: Colors.white),
-                ),
-                SizedBox(width: 2),
-                Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.white,
-                )
-              ],
-            ),
-          ],
-        ));
+      left: 0,
+      right: 0,
+      top: 100,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(
+            'TV Shows',
+            style: TextStyle(color: Colors.white),
+          ),
+          Text(
+            'Movies',
+            style: TextStyle(color: Colors.white),
+          ),
+          Row(
+            children: [
+              Text(
+                'Categories',
+                style: TextStyle(color: Colors.white),
+              ),
+              SizedBox(width: 2),
+              Icon(
+                Icons.arrow_drop_down,
+                color: Colors.white,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 
   SliverToBoxAdapter _buildMovieListSection(String label, List<dynamic> imageList) {
